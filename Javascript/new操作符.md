@@ -1,4 +1,13 @@
-## new手写版本1
+## 1.原理
+
++ 创建一个新对象
++ 将构造函数的作用域赋给新对象(因此this就指向了这个对象)
++ 执行构造函数中的代码(为这个新对象添加属性)
++ 如果构造函数返回的是对象则返回这个对象，否则返回新创建的对象
+
+## 2.实现
+
+### new手写版本1
 
 ```javascript
 function objectFactory() {
@@ -22,7 +31,7 @@ function Person(name) {
 let p1 = objectFactory(Person, 'zao')
 ```
 
-## new手写版本2
+### new手写版本2
 
 ```javascript
 function objectFactory() {
@@ -43,7 +52,7 @@ function objectFactory() {
 
 ```
 
-## new手写版本3
+### new手写版本3
 
 ```javascript
 // 木易杨
@@ -58,5 +67,15 @@ function create() {
 	return ret instanceof Object ? ret : obj;
 };
 
+```
+
+### new手写版本4
+
+```javascript
+function create(con,...args) {
+  const obj=Object.create(con.prototype)
+  let ret = con.apply(obj, args)
+  return typeof ret==='object'?ret:obj
+}
 ```
 
