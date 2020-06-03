@@ -453,4 +453,8 @@ self.addEventListener('fetch', function(event) {
 
 **redundant：** 废弃状态，这个状态表示一个sw的使命周期结束
 
+### 消息推送
 
+[PWA(Progressive Web App)入门系列：Push]( https://juejin.im/post/5cee3b7ff265da1bc55245e0 )
+
+![](https://gitee.com/ruoyiwen/img/raw/master/blog/16b0298522f25d07)
